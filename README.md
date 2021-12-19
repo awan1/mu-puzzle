@@ -31,4 +31,8 @@ not strings in the *MIU-system*.
 
 ## Running the code
 
-TODO: provide instructions for running the code
+From the root directory, run
+
+```
+$ python3 solution.py
+```
