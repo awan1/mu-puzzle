@@ -22,17 +22,11 @@ This section defines the rules of the MU puzzle, and what a "solution" is.
 Let `x` and `y` refer to arbitrary strings. Note that `x` and `y` themselves are
 not strings in the *MIU-system*.
 
-|------|-----------------------------------------------|-------------------|
 | Rule | English                                       | Symbols           |
-|------|-----------------------------------------------|-------------------|
 | 1    | You can add a `U` to any string ending in `I` | `xI` --> `xIU`    |
-|------|-----------------------------------------------|-------------------|
 | 2    | If you have `Mx`, you can create `Mxx`        | `Mx` --> `Mxx`    |
-|------|-----------------------------------------------|-------------------|
 | 3    | You can replace `III` with `U`                | `xIIIy` --> `xUy` |
-|------|-----------------------------------------------|-------------------|
 | 4    | You can delete `UU` from a string             | `xUUy` --> `xy`   |
-|------|-----------------------------------------------|-------------------|
 
 ## Running the code
 
