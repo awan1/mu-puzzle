@@ -36,3 +36,20 @@ From the root directory, run
 ```
 $ python3 solution.py
 ```
+
+### Development
+
+#### Dependencies
+
+- Install Python3
+- Install `virtualenv` and `virtualenvwrapper` for your installation of Python.
+  ([this SO answer](https://stackoverflow.com/a/49528037/2452770) was very
+  helpful for getting this working on macOS)
+- Make a virtualenv for the project, e.g. `mkvirtualenv mu-puzzle`
+- Install dependencies into your virtualenv: `pip3 install -r requirements.txt`
+
+#### Running tests
+
+Run `pytest` from the main directory to automatically run all unit tests.
+[`pytest-watch`](https://github.com/joeyespo/pytest-watch) is included in the
+requirements, so running `ptw` will rerun all `pytest` tests on code change.
