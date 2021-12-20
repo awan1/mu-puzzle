@@ -37,10 +37,11 @@ From the root directory, run
 $ python3 solution.py
 ```
 
-Warning: the code prints the complete solution graph at the end, which can be
-very large if the code is left to run for a long time. I recommend exiting the
-code after no more than 30sec, or commenting out the part of code that prints
-the solution graph.
+You can see available options with
+
+```
+$ python3 solution.py -h
+```
 
 ### Development
 
