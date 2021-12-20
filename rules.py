@@ -3,6 +3,7 @@ Implements the rules of the MU puzzle
 """
 import utils
 
+
 def rule1(s: str) -> list[str]:
   """
   You can add a U to any string ending in I: xI --> xIU
@@ -10,6 +11,7 @@ def rule1(s: str) -> list[str]:
   if (s.endswith('I')):
     return [s + 'U']
   return []
+
 
 def rule2(s: str) -> list[str]:
   """
@@ -20,14 +22,18 @@ def rule2(s: str) -> list[str]:
     return ['M' + x + x]
   return []
 
+
 def rule3(s: str) -> list[str]:
   """
   You can replace III with U: xIIIy --> xUy
   """
   iii_indices = utils.find_indices_of_substring(s, 'III')
+
   def replace_3_chars_with_u_at_index(idx: int) -> str:
-    return s[:idx] + 'U' + s[idx+3:]
+    return s[:idx] + 'U' + s[idx + 3:]
+
   return [replace_3_chars_with_u_at_index(i) for i in iii_indices]
+
 
 def rule4(s: str) -> list[str]:
   """
@@ -38,10 +44,15 @@ def rule4(s: str) -> list[str]:
   # regardless of which `UU` is replaced. For convenience though, re-use this
   # method and then dedupe the return.
   uu_indices = utils.find_indices_of_substring(s, 'UU')
+
   def delete_2_chars_at_index(idx: int) -> str:
-    return s[:idx] + s[idx+2:]
+    return s[:idx] + s[idx + 2:]
+
   # Deduplicate return
   return list(set(delete_2_chars_at_index(i) for i in uu_indices))
 
-# Provide a way to get all the rules in one object
-rules = [rule1, rule2, rule3, rule4]
+
+# Provide a way to get all the rules in one object. The dict key is the rule
+# number, which is helpful for annotating which strings were generated using
+# which rules.
+rules = {1: rule1, 2: rule2, 3: rule3, 4: rule4}
